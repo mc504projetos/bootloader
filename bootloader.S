@@ -1,6 +1,16 @@
 # Anderson Murillo Tito Lira Leite, 248221
 # Isaac do Nascimento Oliveira, 247175
 
+# Olá! Para rodar executar o bootloader em um ambiente
+# Ubuntu 24.04 LTS com arquitetura x86_64, use:
+# > riscv64-unknown-elf-gcc -nostdlib -Ttext 0x80000000 -o bootloader.elf bootloader.S
+# > qemu-system-riscv64 -nographic -machine virt -kernel bootloader.elf -bios none
+
+# O uso de -bios none deve-se ao fato de que sem essa flag, o qemu tentava executar o 
+# firmaware dinamico padrao OpenSBI no mesmo endereco que o bootloader, 0x80000000, 
+# a solucao foi desabilita-lo, pode-se usar um linker.ld e alterar o endereco base
+# 0x80200000, por exemplo
+
 
 .section .text
     .globl _start
