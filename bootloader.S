@@ -8,8 +8,8 @@
 
 # O uso de -bios none deve-se ao fato de que sem essa flag, o qemu tentava executar o 
 # firmaware dinamico padrao OpenSBI no mesmo endereco que o bootloader, 0x80000000, 
-# a solucao foi desabilita-lo, pode-se usar um linker.ld e alterar o endereco base
-# 0x80200000, por exemplo
+# a solucao foi desabilita-lo, mas tambem pode-se usar um linker.ld e alterar o
+# endereco base 0x80200000, por exemplo
 
 
 .section .text
